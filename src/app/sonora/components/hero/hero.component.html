@@ -1,93 +1,138 @@
-<div class="hero-gradient min-h-screen">
+<div class="bg-[#f9f5ff] min-h-screen w-full overflow-hidden" x-data="{ mobileMenuOpen: false }">
   <!-- Navbar -->
-  <nav class="container mx-auto px-6 py-4 flex items-center justify-between">
-    <div class="flex items-center">
-      <svg class="w-10 h-10 text-purple-600" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M3.5 9.5C5.5 9.5 6 11 8 11C10 11 10.5 9.5 12.5 9.5C14.5 9.5 15 11 17 11C19 11 19.5 9.5 21.5 9.5"
-          stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-        <path d="M3.5 14.5C5.5 14.5 6 16 8 16C10 16 10.5 14.5 12.5 14.5C14.5 14.5 15 16 17 16C19 16 19.5 14.5 21.5 14.5"
-          stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-      </svg>
-    </div>
-
-    <div class="hidden md:flex items-center space-x-10">
-      <a href="#" class="text-gray-800 font-medium">Product</a>
-      <a href="#" class="text-gray-800 font-medium">Features</a>
-      <a href="#" class="text-gray-800 font-medium">Marketplace</a>
-      <a href="#" class="text-gray-800 font-medium">Company</a>
-    </div>
-
-    <div>
-      <a href="#" class="hidden md:flex items-center text-gray-800 font-medium">
-        Log in
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24"
-          stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+  <nav class="container mx-auto px-4 sm:px-6 py-6">
+    <div class="flex items-center justify-between">
+      <!-- Logo -->
+      <div class="flex-shrink-0">
+        <svg class="w-10 h-10 text-indigo-500" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 5C13.5 5 8 10.5 8 17C8 23.5 13.5 29 20 29C26.5 29 32 23.5 32 17" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+          <path d="M20 11C13.5 11 8 16.5 8 23C8 29.5 13.5 35 20 35C26.5 35 32 29.5 32 23" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
         </svg>
-      </a>
-      <button class="md:hidden">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-      </button>
+      </div>
+      
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex items-center space-x-10">
+        <a href="#" class="text-gray-800 font-medium hover:text-indigo-600 transition-colors duration-200">Product</a>
+        <a href="#" class="text-gray-800 font-medium hover:text-indigo-600 transition-colors duration-200">Features</a>
+        <a href="#" class="text-gray-800 font-medium hover:text-indigo-600 transition-colors duration-200">Marketplace</a>
+        <a href="#" class="text-gray-800 font-medium hover:text-indigo-600 transition-colors duration-200">Company</a>
+      </div>
+      
+      <!-- Login Button -->
+      <div class="hidden md:block">
+        <a href="#" class="flex items-center text-gray-800 font-medium hover:text-indigo-600 transition-colors duration-200">
+          Log in
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </a>
+      </div>
+      
+      <!-- Mobile Menu Button -->
+      <div class="md:hidden">
+        <button 
+          class="text-gray-800 focus:outline-none" 
+          aria-label="Toggle menu"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    
+    <!-- Mobile Navigation -->
+    <div 
+      class="md:hidden mt-4 pb-4 border-b border-gray-200 transition-all duration-300 ease-in-out overflow-hidden" 
+      [ngClass]="mobileMenuOpen ? 'max-h-60 opacity-100' : 'max-h-0 opacity-0'"
+    >
+      <div class="flex flex-col space-y-3">
+        <a href="#" class="text-gray-800 font-medium hover:text-indigo-600 transition-colors duration-200">Product</a>
+        <a href="#" class="text-gray-800 font-medium hover:text-indigo-600 transition-colors duration-200">Features</a>
+        <a href="#" class="text-gray-800 font-medium hover:text-indigo-600 transition-colors duration-200">Marketplace</a>
+        <a href="#" class="text-gray-800 font-medium hover:text-indigo-600 transition-colors duration-200">Company</a>
+        <a href="#" class="flex items-center text-gray-800 font-medium hover:text-indigo-600 transition-colors duration-200">
+          Log in
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </a>
+      </div>
     </div>
   </nav>
-
+  
   <!-- Hero Content -->
-  <div class="container mx-auto px-6 py-12 md:py-20">
-    <div class="flex flex-col md:flex-row items-center">
+  <div class="container mx-auto px-4 sm:px-6 py-8 md:py-16">
+    <div class="flex flex-col lg:flex-row items-start">
       <!-- Left Content -->
-      <div class="w-full md:w-1/2 mb-12 md:mb-0">
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
+      <div class="w-full lg:w-1/2 pr-0 lg:pr-12 mb-12 lg:mb-0">
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 leading-tight mb-6 opacity-0 transform translate-y-2 animate-fade-in">
           We're changing the way people connect
         </h1>
-        <p class="text-lg text-gray-600 mb-8 max-w-xl">
-          Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet
-          fugiat veniam occaecat fugiat aliqua. Anim aute id magna aliqua ad ad non deserunt sunt.
+        <p class="text-lg text-gray-600 mb-8 max-w-xl opacity-0 transform translate-y-2 animate-fade-in-delay">
+          Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua. Anim aute id magna aliqua ad ad non deserunt sunt.
         </p>
-        <div class="flex flex-wrap gap-4">
-          <a href="#"
-            class="px-6 py-3 bg-purple-600 text-white font-medium rounded-md hover:bg-purple-700 transition-colors">
+        <div class="flex flex-wrap gap-4 opacity-0 transform translate-y-2 animate-fade-in-delay-2">
+          <a href="#" class="px-6 py-3 bg-indigo-600 text-white font-medium rounded-md hover:bg-indigo-700 transition-all duration-200 transform hover:scale-105 shadow-md">
             Get started
           </a>
-          <a href="#" class="px-6 py-3 flex items-center text-gray-800 font-medium">
+          <a href="#" class="px-6 py-3 flex items-center text-gray-800 font-medium hover:text-indigo-600 transition-colors duration-200">
             Live demo
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24"
-              stroke="currentColor">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
             </svg>
           </a>
         </div>
       </div>
-
+      
       <!-- Right Content - Image Grid -->
-      <div class="w-full md:w-1/2 image-grid">
-        <div class="grid grid-cols-2 gap-4">
-          <!-- Primera columna -->
-          <div class="space-y-4">
-            <div class="relative h-64 overflow-hidden">
-              <img src="/placeholder.svg?height=400&width=300" alt="Persona en reunión"
-                class="w-full h-full object-cover" />
-            </div>
-            <div class="relative h-80 overflow-hidden">
-              <img src="/placeholder.svg?height=500&width=300" alt="Espacio de trabajo"
-                class="w-full h-full object-cover" />
+      <div class="w-full lg:w-1/2 relative">
+        <div class="grid grid-cols-12 gap-3 md:gap-4">
+          <!-- Imagen 1 (Presentación) - Más grande a la izquierda -->
+          <div class="col-span-12 sm:col-span-6 md:col-span-6 row-span-2 transition-transform duration-300 hover:scale-[1.02] hover:z-10">
+            <div class="relative h-64 sm:h-80 md:h-96 overflow-hidden rounded-xl shadow-lg">
+              <img 
+                src="/placeholder.svg?height=500&width=300" 
+                alt="Persona presentando a un equipo" 
+                class="w-full h-full object-cover"
+                loading="lazy" 
+              />
             </div>
           </div>
-
-          <!-- Segunda columna -->
-          <div class="space-y-4 mt-12">
-            <div class="relative h-72 overflow-hidden">
-              <img src="/placeholder.svg?height=450&width=300" alt="Persona trabajando"
-                class="w-full h-full object-cover" />
+          
+          <!-- Imagen 2 (Mujer trabajando) -->
+          <div class="col-span-12 sm:col-span-6 md:col-span-6 transition-transform duration-300 hover:scale-[1.02] hover:z-10">
+            <div class="relative h-64 overflow-hidden rounded-xl shadow-lg">
+              <img 
+                src="/placeholder.svg?height=400&width=300" 
+                alt="Mujer trabajando en laptop" 
+                class="w-full h-full object-cover"
+                loading="lazy" 
+              />
             </div>
-            <div class="relative h-64 overflow-hidden">
-              <img src="/placeholder.svg?height=400&width=300" alt="Equipo colaborando"
-                class="w-full h-full object-cover" />
+          </div>
+          
+          <!-- Imagen 3 (Persona con camisa verde) -->
+          <div class="col-span-6 sm:col-span-3 md:col-span-3 transition-transform duration-300 hover:scale-[1.02] hover:z-10">
+            <div class="relative h-48 overflow-hidden rounded-xl shadow-lg">
+              <img 
+                src="/placeholder.svg?height=300&width=200" 
+                alt="Persona con camisa verde" 
+                class="w-full h-full object-cover"
+                loading="lazy" 
+              />
             </div>
-            <div class="relative h-56 overflow-hidden">
-              <img src="/placeholder.svg?height=350&width=300" alt="Persona con dispositivo"
-                class="w-full h-full object-cover" />
+          </div>
+          
+          <!-- Imagen 4 (Espacio de trabajo) -->
+          <div class="col-span-6 sm:col-span-3 md:col-span-3 transition-transform duration-300 hover:scale-[1.02] hover:z-10">
+            <div class="relative h-48 overflow-hidden rounded-xl shadow-lg">
+              <img 
+                src="/placeholder.svg?height=300&width=200" 
+                alt="Espacio de trabajo" 
+                class="w-full h-full object-cover"
+                loading="lazy" 
+              />
             </div>
           </div>
         </div>
