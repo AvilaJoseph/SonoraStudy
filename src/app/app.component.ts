@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { SonoraHomeComponent } from './sonora/pages/SonoraHome/SonoraHome.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet,
+    SonoraHomeComponent
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
