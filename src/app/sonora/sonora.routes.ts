@@ -6,6 +6,7 @@ export const Sonoraroutes: Routes = [
         
     },
     {
-        path: 'about',
+        path: 'Login',
+        
     }
 ];

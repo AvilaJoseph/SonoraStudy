@@ -6,4 +6,6 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   templateUrl: './Login.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class LoginComponent { }
+export class LoginComponent { 
+  imagePath = 'assets/images/sonora-logo.png';
+}
