@@ -1,9 +1,9 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
-  selector: 'footer-app',
+  selector: 'app-sonora-home',
   imports: [],
-  templateUrl: './footer.component.html',
+  templateUrl: './SonoraHome.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FooterComponent { }
+export class SonoraHomeComponent { }
