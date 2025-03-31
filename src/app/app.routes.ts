@@ -1,13 +1,14 @@
 import { Routes } from '@angular/router';
-import { AuthComponent } from './app/pages/Auth/Auth.component';
-import { LoginComponent } from './app/pages/Auth/Login/Login.component';
-import { RegisterComponent } from './app/pages/Auth/Register/Register.component';
+import { AuthComponent } from './sonora/pages/Auth/Auth.component';
+import { LoginComponent } from './sonora/pages/Auth/Login/Login.component';
+import { RegisterComponent } from './sonora/pages/Auth/Register/Register.component';
+import { SonoraHomeComponent } from './shared/pages/SonoraHome/SonoraHome.component';
+
 
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'auth/login',
-    pathMatch: 'full'
+    component: SonoraHomeComponent
   },
   {
     path: 'auth',

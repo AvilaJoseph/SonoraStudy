@@ -7,5 +7,5 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LoginComponent { 
-  imagePath = 'assets/images/sonora-logo.png';
+  
 }
